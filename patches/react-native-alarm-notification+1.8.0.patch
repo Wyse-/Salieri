@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-native-alarm-notification/index.js b/node_modules/react-native-alarm-notification/index.js
+index c5c01ac..28ed697 100644
+--- a/node_modules/react-native-alarm-notification/index.js
++++ b/node_modules/react-native-alarm-notification/index.js
+@@ -73,7 +73,7 @@ ReactNativeAN.scheduleAlarm = async (details) => {
+ ReactNativeAN.sendNotification = (details) => {
+ 	const data = {
+ 		...details,
+-		has_button: false,
++		has_button: details.has_button || false,
+ 		vibrate: (typeof details.vibrate === 'undefined' ? true : details.vibrate),
+ 		play_sound: (typeof details.play_sound === 'undefined' ? true : details.play_sound),
+ 		schedule_type: details.schedule_type || 'once',
